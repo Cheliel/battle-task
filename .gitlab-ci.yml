@@ -14,8 +14,8 @@ cache:
 
   policy: pull-push
 
-# before_script:
-#   - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
+before_script:
+   - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
 
 build:
   stage: build
