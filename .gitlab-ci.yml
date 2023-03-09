@@ -22,7 +22,7 @@ build:
 
   script:
     - 'dotnet --info'
-    - 'dotnet build BattletaskApi\BattleTaskApi.sln'
+    - 'dotnet build \BattleTaskApi.sln'
 
 tests:
   stage: test
