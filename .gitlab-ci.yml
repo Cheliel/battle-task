@@ -21,6 +21,7 @@ build:
   stage: build
 
   script:
+    - 'RUN dotnet --info'
     - 'dotnet build --no-restore'
 
 tests:
