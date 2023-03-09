@@ -1,4 +1,4 @@
-# Battletask
+# Battletask (IOS, ANDROID & WEB)
 
 <p align="center">
     <img style="display: block; margin: 0 auto"  src="./readmeImg/image.png" height="450" width="300"/> 
