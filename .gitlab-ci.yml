@@ -4,7 +4,7 @@ build:
   script:
     - 'ls'
     - 'dotnet --info'
-    - 'dotnet build \BattleTaskApi.sln'
+    - 'dotnet build BattleTaskApi/BattleTaskApi.sln'
 
 tests:
   stage: test
