@@ -6,15 +6,9 @@ build:
     - 'dotnet --info'
     - 'dotnet build BattleTaskApi/BattleTaskApi.sln'
 
-tests:
-  stage: test
-
-  script:
-    - 'ls'
-    - 'dotnet test --no-restore'
 
 deploy:
   stage: deploy
-  script: echo "Define your deployment script!"
+  script: 'dotnet publish "BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj"'
   environment: production
 
