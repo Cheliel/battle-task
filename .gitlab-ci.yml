@@ -9,6 +9,11 @@ build:
 
 deploy:
   stage: deploy
-  script: 'dotnet publish "BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj"'
+  script: 
+    - 'dotnet publish "BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj"'
+    - 'cd /home/deployer/builds/Q1yqx1jQ/0/m2i/battletask/BattleTaskApi/BattleTaskApi/bin/Debug/net7.0/publish/'
+    - 'echo Démarrage de lapplication'
+    - 'dotnet BattleTaskApi.dll  --urls http://::5000'
+    - 'Ces en prod mal poule'
   environment: production
 
