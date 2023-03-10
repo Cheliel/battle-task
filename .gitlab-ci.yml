@@ -2,7 +2,7 @@ build:
   stage: build
 
   script:
-    - 'git clone http://dinogit.fr/m2i/battletask.git'
+    - 'ls'
     - 'dotnet --info'
     - 'dotnet build \BattleTaskApi.sln'
 
