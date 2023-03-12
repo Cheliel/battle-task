@@ -1,4 +1,6 @@
+
 build:
+  image: mcr.microsoft.com/dotnet/sdk:7.0
   stage: build
 
   script:
@@ -9,6 +11,7 @@ build:
 
 deploy:
   stage: deploy
+  image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
     - 'dotnet publish "BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj"'
     - 'cd /home/deployer/builds/Q1yqx1jQ/0/m2i/battletask/BattleTaskApi/BattleTaskApi/bin/Debug/net7.0/publish/'
