@@ -4,10 +4,12 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
-RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
+WORKDIR /src
+COPY ["BattleTaskApi.csproj", "."]
+RUN dotnet restore "./BattleTaskApi.csproj"
 COPY . .
-RUN dotnet build "BattleTaskApi/BattleTaskApi.csproj" -c Release -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "BattleTaskApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
