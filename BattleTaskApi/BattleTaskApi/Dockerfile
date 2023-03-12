@@ -3,6 +3,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+RUN ls
 RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
 RUN ls
 RUN dotnet build "BattleTaskApi/BattleTaskApi.csproj" -c Debug -o /app/build
