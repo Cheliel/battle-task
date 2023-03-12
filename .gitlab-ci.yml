@@ -4,7 +4,6 @@ build:
   stage: build
 
   script:
-    - 'ls'
     - 'docker build -t cmd BattleTaskApi/BattleTaskApi/'
 
 
