@@ -6,13 +6,13 @@ build:
   script:
     - 'mkdir -p BattleTaskApi/BattleTaskApi/app/build'
     - 'mkdir -p BattleTaskApi/BattleTaskApi/app/publish'
-    - 'docker build -t cmd BattleTaskApi/BattleTaskApi/'
+    - 'docker build -t battletask BattleTaskApi/BattleTaskApi/'
 
 
 deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'ls /builds/m2i/battletask/BattleTaskApi/BattleTaskApi/bin/Release/net7.0/publish/'
+      - 'docker run battletask'
   environment: production
 
