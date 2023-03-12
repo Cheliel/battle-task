@@ -6,15 +6,15 @@ build:
   script:
     - 'mkdir -p BattleTaskApi/BattleTaskApi/app/build'
     - 'mkdir -p BattleTaskApi/BattleTaskApi/app/publish'
-    - 'docker build -t battletask BattleTaskApi/BattleTaskApi/'
+    - 'docker build -t $CI_PROJECT_NAME BattleTaskApi/BattleTaskApi/'
 
 
 deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'docker stop battletask || true'
-      - 'docker rm attletask || true'
-      - 'docker run -p 5000:80 battletask'
+      - 'docker stop $CI_PROJECT_NAME || true'
+      - 'docker rm $CI_PROJECT_NAME || true'
+      - 'docker run --name $CI_PROJECT_NAME -d -p 5000:80 $CI_PROJECT_NAME'
   environment: production
 
