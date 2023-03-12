@@ -9,7 +9,7 @@ COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
 RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
 COPY . .
 RUN ls
-WORKDIR "/src/BattleTaskApi"
+WORKDIR "/BattleTaskApi"
 RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
