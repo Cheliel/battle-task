@@ -6,11 +6,10 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /BattleTaskApi
-RUN ls
-COPY ["BattleTaskApi/BattleTaskApi.csproj", "BattleTaskApi/"]
+COPY ["BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj", "BattleTaskApi/"]
 RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
 COPY . .
+RUN ls
 WORKDIR "/src/BattleTaskApi"
 RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
 
