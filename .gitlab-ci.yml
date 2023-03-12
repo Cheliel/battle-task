@@ -13,6 +13,8 @@ deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'ls'
+      - 'docker stop battletask || true'
+      - 'docker rm attletask || true'
+      - 'docker run -p 5000:80 battletask'
   environment: production
 
