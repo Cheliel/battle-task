@@ -10,7 +10,7 @@ RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
 COPY . .
 WORKDIR "/src/BattleTaskApi"
 RUN ls
-RUN dotnet build "BattleTaskApi.csproj" -c Debug -o /app/build
+RUN dotnet build "BattleTaskApi/BattleTaskApi.csproj" -c Debug -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "BattleTaskApi.csproj" -c Debug -o /app/publish /p:UseAppHost=false
