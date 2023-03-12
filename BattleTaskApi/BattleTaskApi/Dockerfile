@@ -7,4 +7,4 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
-RUN ls
+RUN echo ls
