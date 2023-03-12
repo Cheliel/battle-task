@@ -5,8 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj", "BattleTaskApi/BattleTaskApi"]
-RUN dotnet restore "BattleTaskApi/BattleTaskApi/BattleTaskApi.csproj"
+COPY ["BattleTaskApi.csproj", "/BattleTaskApi"]
+RUN dotnet restore "/BattleTaskApi/BattleTaskApi.csproj"
 COPY . .
 WORKDIR "/src/BattleTaskApi/BattleTaskApi"
 RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
