@@ -4,9 +4,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-RUN ls
-COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
-RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
+RUN dotnet restore "BattleTaskApi.csproj"
 COPY . .
 RUN ls
 RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
