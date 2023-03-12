@@ -10,7 +10,7 @@ RUN mkdir src
 COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
 RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
 COPY . .
-RUN dotnet build "BattleTaskApi.csproj" -c Debug -o BattleTaskApi/
+RUN dotnet build "BattleTaskApi/BattleTaskApi.csproj" -c Debug
 
 FROM build AS publish
 RUN dotnet publish "BattleTaskApi.csproj" -c Debug
