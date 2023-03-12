@@ -6,11 +6,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["BattleTaskApi.csproj", "/BattleTaskApi"]
-RUN ls
 RUN dotnet restore "/BattleTaskApi/BattleTaskApi.csproj"
+RUN ls
 COPY . .
-WORKDIR "/BattleTaskApi/BattleTaskApi"
-RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
+#WORKDIR "/BattleTaskApi/BattleTaskApi"
+#RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "BattleTaskApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
