@@ -29,7 +29,7 @@ namespace BattleTaskApi
 
             var summaries = new[]
             {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Areezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
             app.MapGet("/weatherforecast", (HttpContext httpContext) =>
