@@ -14,6 +14,6 @@ deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'ls /builds/m2i/battletask/BattleTaskApi/'
+      - 'ls /builds/m2i/battletask/BattleTaskApi/BattleTaskApi'
   environment: production
 
