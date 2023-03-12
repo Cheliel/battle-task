@@ -13,6 +13,6 @@ deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'ls /app/build/'
+      - 'ls /BattleTaskApi'
   environment: production
 
