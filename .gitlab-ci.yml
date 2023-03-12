@@ -7,13 +7,13 @@ build:
     - 'ls'
     - 'dotnet --info'
     - 'dotnet build BattleTaskApi/BattleTaskApi.sln -c Debug -o /app/build'
-    - 'ls app/build'
+    - 'ls /builds/m2i/battletask/BattleTaskApi/
 
 
 deploy:
   stage: deploy
   image: mcr.microsoft.com/dotnet/aspnet:7.0
   script: 
-      - 'ls BattleTaskApi/BattleTaskApi'
+      - 'ls /builds/m2i/battletask/BattleTaskApi/'
   environment: production
 
