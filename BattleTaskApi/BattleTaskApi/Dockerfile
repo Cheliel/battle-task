@@ -8,10 +8,10 @@ COPY ["BattleTaskApi.csproj", "."]
 RUN dotnet restore "./BattleTaskApi.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "BattleTaskApi.csproj" -c Debug -o /app/build
+RUN dotnet build "BattleTaskApi.csproj" -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "BattleTaskApi.csproj" -c Debug -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "BattleTaskApi.csproj" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
