@@ -6,7 +6,7 @@ build:
   script:
     - 'ls'
     - 'dotnet --info'
-    - 'dotnet build BattleTaskApi/BattleTaskApi.sln -c Debug -o /app/build'
+    - 'dotnet build BattleTaskApi/BattleTaskApi.sln'
     - 'ls app/build'
 
 
