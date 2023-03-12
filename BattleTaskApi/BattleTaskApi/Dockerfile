@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["BattleTaskApi.csproj", "BattleTaskApi/"]
 RUN dotnet restore "BattleTaskApi/BattleTaskApi.csproj"
-COPY .
+COPY . .
 WORKDIR "/src/BattleTaskApi"
 RUN dotnet build "BattleTaskApi.csproj" -c Release -o /app/build
 
