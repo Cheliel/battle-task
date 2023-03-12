@@ -4,7 +4,7 @@ build:
   stage: build
 
   script:
-    - 'docker build -t cmd BattleTaskApi/BattleTaskApi/'
+    - 'docker build -t cmd BattleTaskApi/'
 
 
 deploy:
