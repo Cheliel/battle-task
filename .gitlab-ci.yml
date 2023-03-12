@@ -7,7 +7,7 @@ build:
     - 'ls'
     - 'dotnet --info'
     - 'dotnet build BattleTaskApi/BattleTaskApi.sln -c Debug -o /app/build'
-    - 'ls /builds/m2i/battletask/BattleTaskApi/
+    - 'ls /builds/m2i/battletask/BattleTaskApi/'
 
 
 deploy:
