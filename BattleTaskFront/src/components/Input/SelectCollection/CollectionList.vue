@@ -1,5 +1,8 @@
 <template>
     <div class="CollectionListSection">
+       <div class="leftSection">
+          <img class="add_button" src="@/assets/img/add_button.svg">
+        </div>
         <div class="rightSelection">
             <div class="CollectionListTitleContaneur"><div class="CollectionListTitle">Collection</div></div>
             <div class="CollectionListContaneur">
@@ -10,13 +13,9 @@
                 <CollectionItem @onChoose="sendChange" Name="Vélo" Color="#f1414a"/>
                 <CollectionItem @onChoose="sendChange" Name="Travail" Color="#06a0b1"/>
                 <CollectionItem @onChoose="sendChange" Name="Tâche ménagère" Color="#7d5889"/>
-                <CollectionItem @onChoose="sendChange" Name="Tâche ménagère de très longue durée" Color="#06a0b1"/>
+                <CollectionItem @onChoose="sendChange" Name="Tâche ménagère de très longue duré Tâche ménagère de très longue durée e" Color="#06a0b1"/>
             </div>
         </div>
-        <div class="leftSection">
-          <img class="add_button" src="@/assets/img/add_button.svg">
-        </div>
-
     </div>
 </template>
 
@@ -44,10 +43,13 @@ export default {
 
 .CollectionListSection{
     display: flex;
-    flex-direction: raw;
+    align-items: bottom;
+
+    justify-content: right;
     margin-top: 40px;
-    margin-left: 20px;
-    padding-left: 5px;
+    // width: 100%;
+
+    background-color:inherit;
 }
 
 .rightSelection{
@@ -55,8 +57,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 300px;
     padding-left: 5px;
 }
 
@@ -75,12 +77,18 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid black 3px;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     scrollbar-width:none;
     border-radius: 5%;
+    // box-shadow:  0px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px 0px;
+
+}
+
+.CollectionListContaneur::-webkit-scrollbar {
+  display: none;
 }
 
 .leftSection{
@@ -88,20 +96,19 @@ export default {
     flex-direction: raw;
     align-items: end;
     justify-content: flex-end;
-    margin-left: 17px;
+    margin-right: 17px;
 }
 
 .add_button{
     height: 30px;
     border-radius: 50%;
-    background-color: #f1414a;
+    background-color: #f1414aaf;
     margin-bottom: 6px;
 }
 
 .add_button:hover{
-    opacity: 1;
-    rotate: 90deg;
-    transition: 500ms;
+    background-color: #f1414a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
 }
 

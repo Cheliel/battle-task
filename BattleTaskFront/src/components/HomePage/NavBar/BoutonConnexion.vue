@@ -1,13 +1,15 @@
 <template>
     <div class="buttonConnexion">
-        <button>CONNEXION<div class="decoration"></div></button>
+      <router-link to="/connexion">  <button>CONNEXION<div class="decoration"></div></button> </router-link>
     </div>
 </template>
 
 <script>
 
 export default {
-  name: 'NavitagionBar'
+  name: 'NavitagionBar',
+  components: {
+  }
 }
 
 </script>
@@ -30,6 +32,10 @@ export default {
     background-color: #ffff;
     border-radius: 15px;
     border : none;
+}
+
+.buttonConnexion button:hover{
+  cursor: pointer;
 }
 
   .buttonConnexion button .decoration{

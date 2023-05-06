@@ -33,7 +33,7 @@ export default {
   flex-direction: row;
   align-items: right;
   justify-content: right;
-  width: 74.5%;
+  width: 300px;
   padding: 5px;
   height: 35px;
 }
@@ -44,14 +44,22 @@ export default {
     width: 30px;
 }
 
+.off{
+  opacity: 0.6;
+}
+
 .off:hover{
-  rotate:360deg;
-  transition: 600ms;
   cursor: pointer;
+  opacity: 1;
+}
+
+.on{
+  opacity: 0.6;
 }
 
 .on:hover{
   cursor: pointer;
+  opacity: 1;
 }
 
 </style>

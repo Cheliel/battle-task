@@ -53,11 +53,8 @@ export default {
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
-  background-color: #DCDFE5;
-  height: 100%;
-  width: 100%;
-  margin-top: 50px;
-  padding: 20px;
+  margin-top: 20px;
+  padding: 0px 0px 20px 0px;
 }
 
 </style>

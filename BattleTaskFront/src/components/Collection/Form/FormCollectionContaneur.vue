@@ -45,14 +45,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #DCDFE5;
-  height: 700px;
-  width: 900px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  // height: 40vh; // 700
+  // width: 400px; // 900
+  // margin-top: 100px;
+  // margin-bottom: 250px;
+  // padding: 20px;
+  // border-radius: 14px;
+  // box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .TopSection{
   width: 100%;
@@ -82,18 +82,18 @@ export default {
   height: 50px;
   font-family: bebas;
   font-size: 30px;
-  border: solid #f1414a 3px;
+  border: solid #f1414a66 3px;
   border-radius: 8px;
-  opacity: 0.5;
 }
 
 #label_Valider{
-  opacity: 1;
   color: #0e0f19;
 }
 
 .BT_Valider:hover{
-  opacity: 1;
+  border: solid #f1414a 3px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
 }
 
 </style>

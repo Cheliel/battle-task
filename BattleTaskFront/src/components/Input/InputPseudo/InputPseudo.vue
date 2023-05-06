@@ -1,7 +1,7 @@
 <template>
-    <div class="InputNameSection">
-        <div class="inputNameContaneur">
-            <input v-on:input="sendChange" placeholder="NAME" type="text" class="inputName" v-model="name">
+    <div class="InputPseudoSection">
+        <div class="inputPseudoContaneur">
+            <input v-on:input="sendChange" placeholder="Pseudo" required="required" type="text" class="inputPseudo" v-model="pseudo">
             <hr class="lign">
         </div>
     </div>
@@ -11,15 +11,15 @@
 
 export default {
   data () {
-    return { name: '' }
+    return { pseudo: '' }
   },
-  name: 'InputNameContaneur',
+  name: 'InputPseudo',
   components: {
 
   },
   methods: {
     sendChange () {
-      this.$emit('onChange', this.name)
+      this.$emit('onChange', this.pseudo)
     }
   }
 }
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-.InputNameSection {
+.InputPseudoSection {
   background-color: #DCDFE5;
   height: 50px;
   width: 70%;
@@ -41,12 +41,12 @@ export default {
 
 }
 
-.inputNameContaneur{
+.inputPseudoContaneur{
     margin-top: 10px;
     font-family: oxygen;
 }
 
-.inputName{
+.inputPseudo{
   background-color: #DCDFE5;
   border: none;
   outline: none;

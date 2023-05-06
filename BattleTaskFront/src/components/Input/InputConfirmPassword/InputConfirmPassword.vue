@@ -1,7 +1,7 @@
 <template>
-    <div class="InputNameSection">
-        <div class="inputNameContaneur">
-            <input v-on:input="sendChange" placeholder="NAME" type="text" class="inputName" v-model="name">
+    <div class="InputPasswordConfirmationSection">
+        <div class="inputPasswordConfirmationContaneur">
+            <input v-on:change="sendChange" placeholder="Password Confirmation" required="required" type="Password" class="inputPasswordConfirmation" v-model="passwordConfirmation">
             <hr class="lign">
         </div>
     </div>
@@ -11,15 +11,15 @@
 
 export default {
   data () {
-    return { name: '' }
+    return { passwordConfirmation: '' }
   },
-  name: 'InputNameContaneur',
+  name: 'InputConfirmationPassword',
   components: {
 
   },
   methods: {
     sendChange () {
-      this.$emit('onChange', this.name)
+      this.$emit('onChange', { passwordConfirmation: this.passwordConfirmation })
     }
   }
 }
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-.InputNameSection {
+.InputPasswordConfirmationSection {
   background-color: #DCDFE5;
   height: 50px;
   width: 70%;
@@ -41,12 +41,12 @@ export default {
 
 }
 
-.inputNameContaneur{
+.inputPasswordConfirmationContaneur{
     margin-top: 10px;
     font-family: oxygen;
 }
 
-.inputName{
+.inputPasswordConfirmation{
   background-color: #DCDFE5;
   border: none;
   outline: none;
@@ -56,7 +56,7 @@ export default {
   font-size: 15px;
 }
 
-input[type=text]:focus {
+input[type=password]:focus {
   margin-bottom: 7px;
 
 }

@@ -1,12 +1,13 @@
 <template>
-    <div class="FormCollectionContaneur">
+    <div class="FormNoteContaneur">
         <div class="TopSection">
             <span class="Title">Note</span>
             <router-link to="/">  <img src="@/assets/img/close.svg" class="BT_close"/></router-link>
         </div>
         <NoteInputContaneur @onChange="changeListener"/>
+        <InputDificulty v-if='false'/>
         <div class="bottomSection">
-          <div v-on:click="validate" class="BT_Valider"><label id="label_Valider">VALIDER</label></div>
+          <div v-on:click="validate" class="BT_Valider_Note"><label id="label_Valider">VALIDER</label></div>
         </div>
     </div>
   </template>
@@ -41,18 +42,12 @@ export default {
 </script>
 
 <style lang="scss">
-.FormCollectionContaneur{
+.FormNoteContaneur{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #DCDFE5;
-  height: 700px;
-  width: 900px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  padding: 20px 20px 0px 20px;
 }
 .TopSection{
   width: 100%;
@@ -68,12 +63,12 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
+  margin-top: 20px;
   width: 100%;
-  height: 130px;
 }
 
-.BT_Valider{
+.BT_Valider_Note{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -82,18 +77,14 @@ export default {
   height: 50px;
   font-family: bebas;
   font-size: 30px;
-  border: solid #f1414a 3px;
+  border: solid #f1414a66 3px;
   border-radius: 8px;
-  opacity: 0.5;
 }
 
-#label_Valider{
-  opacity: 1;
-  color: #0e0f19;
-}
-
-.BT_Valider:hover{
-  opacity: 1;
+.BT_Valider_Note:hover{
+  border: solid #f1414a 3px;
+  cursor: pointer;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 </style>

@@ -13,7 +13,8 @@
             <div class="labelColorPreview">
                 <label>Color</label>
             </div>
-            <div class="colorContaneur"></div>
+            <input v-on:input="emitColor" class="colorContaneur" type="color" v-model="color" >
+            <!-- <div class="colorContaneur"><input type="color" v-model="color" > </div>-->
         </div>
     </div>
 </template>
@@ -50,6 +51,9 @@ export default {
       }
       return true
     },
+    emitColor () {
+      this.$emit('onChange', this.color)
+    },
     colorFocusIn () {
       console.log(this.onFocusColor)
       this.onFocusColor = 50
@@ -72,21 +76,21 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #DCDFE5;
-  height: 90px;
+  height: 44px;
   width: 50%;
   margin-top: 30px;
   padding: 5px;
   padding-left: 10px;
-  padding-right: 10px;
-  border: solid #0e0f19 3px;
+  // padding-right: 10px;
+  border: solid #0e0f19 2px;
+  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
 }
 
 .InputColorContaneur{
-    margin-top: 45px;
+    margin-top: 20px;
     width: 30%;
-    font-family: oxygen;
+    font-family: bebas;
 }
 
 .colorPreview{
@@ -95,31 +99,35 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: right;
-    width: 20%;
+    width: 10%;
 }
 
 .colorContaneur{
-    margin-top: 7px;
-    width: 90px;
-    height: 25px;
-    background-color: v-bind(color);
-    border: solid #0e0f19 3px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background-color:#DCDFE5;
+    border-radius: 50%;
+    border : none;
 }
 
 .labelColorPreview{
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 70%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: oxygen;
 }
 
 .inputColor{
-  background-color: #DCDFE5;
+  background-color:inherit;
   border: none;
   outline: none;
   height: 20px;
   font-family: oxygen;
+  font-weight: 500;
   font-size: 18px;
 }
 
@@ -129,6 +137,11 @@ export default {
   height: 20px;
   font-size: 18px;
   font-family: oxygen;
+}
+
+input[type=color]::-webkit-color-swatch,
+::-moz-color-swatch, ::-webkit-color-swatch-wrapper {
+  border-radius: 50%;
 }
 
 </style>

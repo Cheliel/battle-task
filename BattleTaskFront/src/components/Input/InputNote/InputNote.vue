@@ -1,8 +1,8 @@
 <template>
   <div class="textContaneur">
-    <div class="ContaneurInputNameSection">
-      <div class="InputNameSection">
-          <div class="inputNameContaneur">
+    <div class="ContaneurInputNoteSection">
+      <div class="InputNoteSection">
+          <div class="inputNoteContaneur">
               <input v-on:input="sendChange" placeholder="NOTE" type="text" class="inputNote" v-model="name">
               <hr class="lign">
           </div>
@@ -46,45 +46,52 @@ export default {
 .textContaneur{
   display: flex;
   flex-direction: column;
+  justify-content: right;
+  align-items: start;
+  width: 100%;
 }
 
 .hideDesciptionButton{
   border-radius: 50%;
-  background-color: #06A0B1;
+  background-color: #06A0B166;
   display: flex;
   align-items: end;
   margin-left:15px;
-  opacity: 0.7;
 }
 
 .hideDesciptionButton:hover{
-  opacity: 1;
+  background-color: #06A0B1;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+
 }
 
 .hideDesciptionButton img {
-  height: 35px;
+  height: 25px;
 }
 
-.ContaneurInputNameSection{
+.ContaneurInputNoteSection{
   display:flex;
   flex-direction: row;
   align-items: end;
+  width: 80%;
 }
 
-.InputNameSection {
+.InputNoteSection {
   background-color: #DCDFE5;
-  height: 90px;
-  width: 70%;
+  height: 50px;
+  width: 100%;
   margin-top: 5px;
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border: solid #0e0f19 3px;
+  border: solid #0e0f19 2px;
+  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
 }
 
-.inputNameContaneur{
-    margin-top: 40px;
+.inputNoteContaneur{
+    margin-top: 10px;
     font-family: oxygen;
 }
 
