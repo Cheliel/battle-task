@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CollectionView from '../views/CollectionView.vue'
 import ToDoListView from '../views/ToDoListView.vue'
+import NoteView from '@/views/NoteView.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/toDoList',
     name: 'ToDoListView',
     component: ToDoListView
+  },
+  {
+    path: '/note',
+    name: 'noteView',
+    component: NoteView
   }
 ]
 

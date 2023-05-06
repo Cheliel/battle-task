@@ -5,7 +5,7 @@
         <div class="tilteLogo">BattleTask</div>
     </div>
     <div class="menu">
-        <a href="#presentation" class="menuItem">PRESENTATION</a>
+        <router-link to="/note"><a href="#presentation" class="menuItem">PRESENTATION</a></router-link>
         <router-link to="/collection">  <a href="" class="menuItem">FONCTIONNALITE</a></router-link>
         <router-link to="/toDoList"><a href="#faqSection" class="menuItem">FAQ</a></router-link>
     </div>

@@ -1,39 +1,43 @@
 <template>
-    <div class="ToDoListInputContaneur" v-on:input="changeSender" v-on:click="changeSender">
+    <div class="CollectionInputContaneur" v-on:input="changeSender" v-on:click="changeSender">
       <InputNotification @onChange="notificationChangeListener"/>
       <InputNameContaneur @onChange="nameChangeListener"/>
-      <CollectionList/>
+      <InputColorContaneur @onChange="colorChangeListener"/>
     </div>
 </template>
 
 <script>
 
-import InputNotification from './InputNotificationContaneur/InputNotification.vue'
-import InputNameContaneur from './InputName/InputNameCollection.vue'
-import CollectionList from './CollectionList/CollectionList.vue'
+import InputColorContaneur from '@/components/Input/InputColor/InputColor.vue'
+import InputNotification from '@/components/Input/InputNotificationContaneur/InputNotification.vue'
+import InputNameContaneur from '@/components/Input/InputName/InputName.vue'
 export default {
   name: 'CollectionInputContaneur',
   data () {
     return {
       notificationOn: false,
-      Name: ''
+      collectionName: '',
+      collectionColor: ''
     }
   },
   components: {
     InputNotification,
     InputNameContaneur,
-    CollectionList
-
+    InputColorContaneur
   },
   methods: {
     changeSender () {
       this.$emit('onChange', {
         notificationOn: this.notificationOn,
-        Name: this.Name
+        collectionName: this.collectionName,
+        collectionColor: this.collectionColor
       })
     },
     nameChangeListener (event) {
-      this.Name = event
+      this.collectionName = event
+    },
+    colorChangeListener (event) {
+      this.collectionColor = event
     },
     notificationChangeListener (event) {
       this.notificationOn = event
@@ -44,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ToDoListInputContaneur{
+.CollectionInputContaneur{
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -52,6 +56,7 @@ export default {
   background-color: #DCDFE5;
   height: 100%;
   width: 100%;
+  margin-top: 50px;
   padding: 20px;
 }
 

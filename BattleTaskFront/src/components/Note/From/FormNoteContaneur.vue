@@ -1,10 +1,10 @@
 <template>
     <div class="FormCollectionContaneur">
         <div class="TopSection">
-            <span class="Title">Collection</span>
+            <span class="Title">Note</span>
             <router-link to="/">  <img src="@/assets/img/close.svg" class="BT_close"/></router-link>
         </div>
-        <CollectionInputContaneur @onChange="changeListener"/>
+        <NoteInputContaneur @onChange="changeListener"/>
         <div class="bottomSection">
           <div v-on:click="validate" class="BT_Valider"><label id="label_Valider">VALIDER</label></div>
         </div>
@@ -13,7 +13,7 @@
 
 <script>
 
-import CollectionInputContaneur from './CollectionInputContaneur.vue'
+import NoteInputContaneur from './NoteInputContaneur.vue'
 export default {
   name: 'FormCollectionContaneur',
   data () {
@@ -24,7 +24,7 @@ export default {
     }
   },
   components: {
-    CollectionInputContaneur
+    NoteInputContaneur
   },
   methods: {
     changeListener (event) {

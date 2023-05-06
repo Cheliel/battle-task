@@ -2,7 +2,7 @@
     <div class="FormToDoListContaneur">
         <div class="TopSection">
             <span class="Title">To Do List</span>
-            <router-link to="/">  <img src="../../../assets/img/close.svg" class="BT_close"/></router-link>
+            <router-link to="/">  <img src="@/assets/img/close.svg" class="BT_close"/></router-link>
         </div>
         <ToDoListInputContaneur @onChange="changeListener"/>
         <div class="bottomSection">
@@ -13,7 +13,7 @@
 
 <script>
 
-import ToDoListInputContaneur from './Input/ToDoListInputContaneur.vue'
+import ToDoListInputContaneur from './ToDoListInputContaneur.vue'
 export default {
   name: 'FormCollectionContaneur',
   data () {

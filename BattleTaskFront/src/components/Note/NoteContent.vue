@@ -1,7 +1,7 @@
 <template>
     <div class="collectionContaneur">
       <navigation-bar/>
-      <FormCollectionContaneur/>
+      <FormNoteContaneur/>
       <FooterSection/>
     </div>
   </template>
@@ -9,14 +9,13 @@
 <script>
 import NavigationBar from '../HomePage/NavBar/NavigationBar.vue'
 import FooterSection from '../HomePage/Footer/FooterSection.vue'
-import FormCollectionContaneur from './Form/FormCollectionContaneur.vue'
+import FormNoteContaneur from '@/components/Note/From/FormNoteContaneur.vue'
 export default {
   name: 'CollectionContent',
   components: {
     NavigationBar,
-    FormCollectionContaneur,
+    FormNoteContaneur,
     FooterSection
-
   }
 }
 
