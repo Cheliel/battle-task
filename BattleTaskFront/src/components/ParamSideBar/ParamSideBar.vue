@@ -147,7 +147,7 @@
               <img class="medium-icon" src="@/assets/img/note_add.svg"/>
             </div>
           </div>
-          <div v-on:click="switchBar()" class="displaySideBarParamButton">
+          <div v-on:click="" class="displaySideBarParamButton">
             <img src="@/assets/img/arrow_down_white.svg"/>
           </div>
         </div>
