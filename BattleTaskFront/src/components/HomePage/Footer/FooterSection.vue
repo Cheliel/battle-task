@@ -20,9 +20,12 @@ export default {
 <style lang="scss">
 .footerContaner{
     display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 100px 0px 20px 0px;
+    justify-content: left;
+    width: 200px;
+    // width: 100%;
+    padding: 10px;
+    background-color: #0e0f19;
+    // margin: 100px 0px 20px 0px;
 }
 .footerContent{
     display: flex;
@@ -30,7 +33,8 @@ export default {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0% 25% 0% 25%;
+    // padding: 0% 25% 0% 25%;
+    font-size: 8px;
 }
 
 .footerContent div{
