@@ -34,7 +34,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     // padding: 0% 25% 0% 25%;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .footerContent div{

@@ -50,7 +50,7 @@ export default {
   padding: 20px 20px 0px 20px;
 }
 .TopSection{
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,7 +65,7 @@ export default {
   align-items: center;
   justify-content: left;
   margin-top: 20px;
-  width: 100%;
+  // width: 100%;
 }
 
 .BT_Valider_Note{

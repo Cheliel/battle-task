@@ -66,8 +66,8 @@ textarea{
   font-size: 15px;
 }
 
-input[type=text]:focus {
-  margin-bottom: 7px;
-}
+// input[type=text]:focus {
+//   margin-bottom: 7px;
+// }
 
 </style>

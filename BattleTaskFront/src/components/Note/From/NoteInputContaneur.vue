@@ -70,7 +70,7 @@ export default {
 .NoteInputContaneur{
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
   background-color: inherit;
   height: inherit;

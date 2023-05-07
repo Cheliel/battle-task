@@ -33,7 +33,7 @@ export default {
   flex-direction: row;
   align-items: right;
   justify-content: right;
-  width: 300px;
+  // width: 300px;
   padding: 5px;
   height: 35px;
 }

@@ -1,10 +1,9 @@
 <template>
     <div class="CollectionListSection">
-       <div class="leftSection">
-          <img class="add_button" src="@/assets/img/add_button.svg">
-        </div>
-        <div class="rightSelection">
-            <div class="CollectionListTitleContaneur"><div class="CollectionListTitle">Collection</div></div>
+            <div class="CollectionListTitleContaneur">
+              <img class="add_button" src="@/assets/img/add_button.svg"/>
+              <div class="CollectionListTitle">Collection</div>
+            </div>
             <div class="CollectionListContaneur">
                 <CollectionItem @onChoose="sendChange" Name="Vélo" Color="#f1414a"/>
                 <CollectionItem @onChoose="sendChange" Name="Travail" Color="#06a0b1"/>
@@ -15,7 +14,6 @@
                 <CollectionItem @onChoose="sendChange" Name="Tâche ménagère" Color="#7d5889"/>
                 <CollectionItem @onChoose="sendChange" Name="Tâche ménagère de très longue duré Tâche ménagère de très longue durée e" Color="#06a0b1"/>
             </div>
-        </div>
     </div>
 </template>
 
@@ -43,30 +41,32 @@ export default {
 
 .CollectionListSection{
     display: flex;
-    align-items: bottom;
-
-    justify-content: right;
+    flex-direction: column;
+    align-items: center;
     margin-top: 40px;
-    // width: 100%;
+    width: 250px;
+    height: 300px;
 
     background-color:inherit;
 }
 
-.rightSelection{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 250px;
-    height: 300px;
-    padding-left: 5px;
-}
+// .rightSelection{
+
+//     justify-content: flex-start;
+//     width: 250px;
+//     height: 300px;
+//     padding-left: 5px;
+// }
 
 .CollectionListTitleContaneur{
+    display: flex;
+    justify-content: left;
+    align-items: center;
     width: 100%;
 }
 
 .CollectionListTitle{
+    display: flex;
     margin-left: 15px;
     font-family: bebas;
     font-size: 22px;
