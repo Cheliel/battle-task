@@ -124,12 +124,28 @@
       <div  v-if="!displaySideBar" class="sideBarParamSection-small">
           <div v-if="!displaySideBar" class="small-side-bar">
             <!-- <img class="medium-icon" src="@/assets/img/user_account.svg"/> -->
-            <img class="medium-icon" src="@/assets/img/home.svg"/>
-            <img class="medium-icon" src="@/assets/img/task_alt.svg"/>
-            <img class="medium-icon" src="@/assets/img/settings.svg"/>
-            <img class="medium-icon" src="@/assets/img/collection.svg"/>
-            <img class="medium-icon" src="@/assets/img/todolist.svg"/>
-            <img class="medium-icon" src="@/assets/img/note_add.svg"/>
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/home.svg"/>
+            </div>
+
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/task_alt.svg"/>
+            </div>
+
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/settings.svg"/>
+            </div>
+
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/collection.svg"/>
+            </div>
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/todolist.svg"/>
+            </div>
+
+            <div class="contaneur-side-bar-icon">
+              <img class="medium-icon" src="@/assets/img/note_add.svg"/>
+            </div>
           </div>
           <div v-on:click="switchBar()" class="displaySideBarParamButton">
             <img src="@/assets/img/arrow_down_white.svg"/>
@@ -466,9 +482,23 @@ width : 150px;
   border-radius: 0px 12px 12px 0px;
 }
 
+.contaneur-side-bar-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 42px;
+  // padding: 7px;
+}
+
 .medium-icon{
   height: 35px;
-  padding: 5px;
+
+}
+
+.medium-icon:hover{
+  height: 40px;
+  cursor: pointer;
 }
 
 //////////////////////////////////////////////////////////////////////////////
