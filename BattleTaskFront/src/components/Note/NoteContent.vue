@@ -2,26 +2,27 @@
   <div class="pageNote">
     <navigation-bar/>
     <div class="noteContaneur">
-      <!-- <div v-on:click="displaySideBar(1)">===> Collection</div>
-      <div v-on:click="displaySideBar(2)">===> ToDoList</div>
-      <div v-on:click="displaySideBar(3)">===> Note</div> -->
+          <CalendarContaner/>
           <FormNoteContaneur v-if="false"/>
-          <div v-if="1==display" class="sideColectionPannel">
+          <div v-if="1===display" class="sideColectionPannel">
             <div class="contaneurBasic">
               <FormCollectionContaneur/>
             </div>
         </div>
-        <div v-if="2==display" class="sideToDoListPannel">
+        <div v-if="2===display" class="sideToDoListPannel">
           <div class="contaneurBasic">
             <FormToDoListContaneur/>
           </div>
         </div>
-        <div v-if="3==3" class="sideNotePannel">
+        <div v-if="3===display" class="sideNotePannel">
           <div class="contaneurBasic">
             <FormNoteContaneur/>
           </div>
         </div>
-          <ParamSideBar v-if="4==4"/>
+          <ParamSideBar
+          @displayNote="displaySideBar(3)"
+          @displayCollection="displaySideBar(1)"
+          @displayToDoList="displaySideBar(2)"/>
     </div>
   </div>
   </template>
@@ -32,17 +33,22 @@ import FormNoteContaneur from '@/components/Note/From/FormNoteContaneur.vue'
 import ParamSideBar from '../ParamSideBar/ParamSideBar.vue'
 import FormCollectionContaneur from '@/components/Collection/Form/FormCollectionContaneur.vue'
 import FormToDoListContaneur from '../ToDoList/Form/FormToDoListContaneur.vue'
+import CalendarContaner from '@/components/Calendar/CalendarContaner.vue' // const date = new Date();
 
 export default {
-  name: 'CollectionContent',
+  name: 'NoteContent',
   data () {
     return {
-      display: Number
+      display: 0
     }
   },
   methods: {
     displaySideBar (val) {
-      this.display = val
+      if (val === this.display) {
+        this.display = 0
+      } else {
+        this.display = val
+      }
     }
   },
   components: {
@@ -50,7 +56,8 @@ export default {
     FormNoteContaneur,
     FormCollectionContaneur,
     FormToDoListContaneur,
-    ParamSideBar
+    ParamSideBar,
+    CalendarContaner
   }
 }
 
@@ -70,7 +77,7 @@ export default {
 .noteContaneur{
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: center;
   justify-content: center;
   z-index: 1;
   height: 100%;
@@ -86,7 +93,7 @@ export default {
   position: absolute;
   right:0vw;
   top: 20vh;
-  height: 40%;
+  height: 370px;
   overflow-y: scroll;
   scrollbar-width:none;
 
@@ -94,7 +101,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   // width: 30vw;
   background-color: #dcdfe5;
   z-index: 999;

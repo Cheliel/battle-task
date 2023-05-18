@@ -137,18 +137,18 @@
             </div>
 
             <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/collection.svg"/>
+              <img v-on:click="displayCollection" class="medium-icon" src="@/assets/img/collection.svg"/>
             </div>
             <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/todolist.svg"/>
+              <img v-on:click="displayToDoList" class="medium-icon" src="@/assets/img/todolist.svg"/>
             </div>
 
             <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/note_add.svg"/>
+              <img v-on:click="displayNote" class="medium-icon" src="@/assets/img/note_add.svg"/>
             </div>
           </div>
-          <div v-on:click="" class="displaySideBarParamButton">
-            <img src="@/assets/img/arrow_down_white.svg"/>
+          <div class="displaySideBarParamButton">
+            <img v-on:click="switchBar" src="@/assets/img/arrow_down_white.svg"/>
           </div>
         </div>
 
@@ -175,6 +175,15 @@ export default {
     },
     switchBar () {
       this.displaySideBar = !this.displaySideBar
+    },
+    displayNote () {
+      this.$emit('displayNote', true)
+    },
+    displayCollection () {
+      this.$emit('displayCollection', true)
+    },
+    displayToDoList () {
+      this.$emit('displayToDoList', true)
     }
   }
 }

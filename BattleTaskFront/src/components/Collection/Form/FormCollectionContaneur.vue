@@ -1,12 +1,12 @@
 <template>
     <div class="FormCollectionContaneur">
-        <div class="TopSection">
-            <span class="Title">Collection</span>
-            <router-link to="/">  <img src="@/assets/img/close.svg" class="BT_close"/></router-link>
+        <div class="TopSectionFromCollection">
+            <div class="TitleFormCollection">Collection</div>
+            <img src="@/assets/img/close.svg" class="BT_close_FromCollection"/>
         </div>
         <CollectionInputContaneur @onChange="changeListener"/>
-        <div class="bottomSection">
-          <div v-on:click="validate" class="BT_Valider"><label id="label_Valider">VALIDER</label></div>
+        <div class="bottomSectionFormCollection">
+          <div v-on:click="validate" class="BT_Valider_FormCollection"><label id="label_Valider">VALIDER</label></div>
         </div>
     </div>
   </template>
@@ -46,6 +46,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
   // height: 40vh; // 700
   // width: 400px; // 900
   // margin-top: 100px;
@@ -54,26 +55,40 @@ export default {
   // border-radius: 14px;
   // box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.TopSection{
+.TopSectionFromCollection{
   width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   font-family: bebas;
   font-size: 50px;
 }
 
-.bottomSection{
+// .TitleFormCollection{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.BT_close_FromCollection{
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.BT_close_FromCollection:hover{
+  cursor: pointer;
+}
+
+.bottomSectionFormCollection{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: left;
   width: 100%;
-  height: 130px;
+  // height: 130px;
 }
 
-.BT_Valider{
+.BT_Valider_FormCollection{
   display: flex;
   flex-direction: row;
   align-items: center;
