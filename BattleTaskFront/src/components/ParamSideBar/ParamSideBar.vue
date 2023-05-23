@@ -1,158 +1,102 @@
+
 <template>
-       <div v-if="displaySideBar" class="sideBarParamSection">
-        <div v-if="displaySideBar" class="sideParamPannel">
-            <div class="contaneurBasicSideBarParam">
-              <div class="sideUserSection">
-                  <img src="@/assets/img/user_account.svg"/>
-                  <span>T-Rex</span>
-              </div>
-              <div class="silder-side-param-section">
-                <div class="sideParamSection">
-                  <div class="sideParamElement">
-                    <img class ="small-icon" src="@/assets/img/home.svg"/>
-                    <span class="sidebar-text-element" >Dashbord</span>
-                  </div>
-                  <div class="sideParamElement">
-                    <img class ="small-icon" src="@/assets/img/task_alt.svg"/>
-                    <span class="sidebar-text-element" >Tâche terminée</span>
-                  </div>
-                  <div class="sideParamElement">
-                    <img class ="small-icon" src="@/assets/img/settings.svg"/>
-                    <span class="sidebar-text-element" >Paramettre</span>
-                  </div>
-                </div>
-                <div class="sideCollectionSelection">
-                  <div class="sideCollectionTitle">
-                    <div>
-                      <img src="@/assets/img/collection.svg" class="small-icon"/>
-                      <div>
-                        Collection
-                      </div>
-                    </div>
-                    <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
-                  </div>
-                  <div class="sideCollectionList">
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Travail</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Les choses les plus enneuilleuse</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideCollectionItem">
-                      <div class="sideCollectionDot"></div>
-                      <div class="sideCollectionName">Tâche ménagères</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="sideToDoListSelection">
-                    <div class="sideToDoListTitle">
-                      <div>
-                        <img class="small-icon" src="@/assets/img/todolist.svg"/>
-                        <div>
-                          To Do List
-                        </div>
-                      </div>
-                      <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
-                    </div>
-                    <div class="sideToDoList-List">
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                      <div class="sideToDoListItem">
-                        <div class="sideToDoListDot"></div>
-                        <div class="sideToDoListName">Tâche ménagères</div>
-                      </div>
-                    </div>
-                </div>
-                <FooterSectionSideBar/>
-              </div>
-            </div>
-          </div>
-          <div v-on:click="switchBar()" class="displaySideBarParamButton">
-            <img src="@/assets/img/arrow_down_white.svg"/>
-          </div>
-      </div>
-      <div  v-if="!displaySideBar" class="sideBarParamSection-small">
-          <div v-if="!displaySideBar" class="small-side-bar">
-            <!-- <img class="medium-icon" src="@/assets/img/user_account.svg"/> -->
-            <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/home.svg"/>
-            </div>
+  <div v-if="displaySideBar" class="sideBarParamSection">
+   <div v-if="displaySideBar" class="sideParamPannel">
+       <div class="contaneurBasicSideBarParam">
+         <div class="sideUserSection">
+             <img src="@/assets/img/user_account.svg"/>
+             <span>T-Rex</span>
+         </div>
+         <div class="silder-side-param-section">
+           <div class="sideParamSection">
+             <div class="sideParamElement">
+               <img class ="small-icon" src="@/assets/img/home.svg"/>
+               <span class="sidebar-text-element" >Dashbord</span>
+             </div>
+             <div class="sideParamElement">
+               <img class ="small-icon" src="@/assets/img/task_alt.svg"/>
+               <span class="sidebar-text-element" >Tâche terminée</span>
+             </div>
+             <div class="sideParamElement">
+               <img class ="small-icon" src="@/assets/img/settings.svg"/>
+               <span class="sidebar-text-element" >Paramettre</span>
+             </div>
+           </div>
+           <div class="sideCollectionSelection">
+             <div class="sideCollectionTitle">
+               <div>
+                 <img src="@/assets/img/collection.svg" class="small-icon"/>
+                 <div>
+                   Collection
+                 </div>
+               </div>
+               <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
+             </div>
+             <div class="sideCollectionList">
 
-            <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/task_alt.svg"/>
-            </div>
+               <div v-for="collection in this.Collections" :key="collection.id" class="sideCollectionItem">
+                 <div class="sideCollectionDot"></div>
+                 <div class="sideCollectionName">{{ collection.name }}</div>
+               </div>
 
-            <div class="contaneur-side-bar-icon">
-              <img class="medium-icon" src="@/assets/img/settings.svg"/>
-            </div>
+             </div>
+           </div>
+           <div class="sideToDoListSelection">
+               <div class="sideToDoListTitle">
+                 <div>
+                   <img class="small-icon" src="@/assets/img/todolist.svg"/>
+                   <div>
+                     To Do List
+                   </div>
+                 </div>
+                 <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
+               </div>
+               <div class="sideToDoList-List">
 
-            <div class="contaneur-side-bar-icon">
-              <img v-on:click="displayCollection" class="medium-icon" src="@/assets/img/collection.svg"/>
-            </div>
-            <div class="contaneur-side-bar-icon">
-              <img v-on:click="displayToDoList" class="medium-icon" src="@/assets/img/todolist.svg"/>
-            </div>
+                 <div v-for="toDoList in this.toDoLists" :key="toDoList.id" class="sideToDoListItem">
+                   <div class="sideToDoListDot"></div>
+                   <div class="sideToDoListName">{{ toDoList.name }}</div>
+                 </div>
+               </div>
+           </div>
+           <FooterSectionSideBar/>
+         </div>
+       </div>
+     </div>
+     <div v-on:click="switchBar()" class="displaySideBarParamButton">
+       <img src="@/assets/img/arrow_down_white.svg"/>
+     </div>
+ </div>
+ <div  v-if="!displaySideBar" class="sideBarParamSection-small">
+     <div v-if="!displaySideBar" class="small-side-bar">
+       <!-- <img class="medium-icon" src="@/assets/img/user_account.svg"/> -->
+       <div class="contaneur-side-bar-icon">
+         <img class="medium-icon" src="@/assets/img/home.svg"/>
+       </div>
 
-            <div class="contaneur-side-bar-icon">
-              <img v-on:click="displayNote" class="medium-icon" src="@/assets/img/note_add.svg"/>
-            </div>
-          </div>
-          <div class="displaySideBarParamButton">
-            <img v-on:click="switchBar" src="@/assets/img/arrow_down_white.svg"/>
-          </div>
-        </div>
+       <div class="contaneur-side-bar-icon">
+         <img class="medium-icon" src="@/assets/img/task_alt.svg"/>
+       </div>
+
+       <div class="contaneur-side-bar-icon">
+         <img class="medium-icon" src="@/assets/img/settings.svg"/>
+       </div>
+
+       <div class="contaneur-side-bar-icon">
+         <img v-on:click="displayCollection" class="medium-icon" src="@/assets/img/collection.svg"/>
+       </div>
+       <div class="contaneur-side-bar-icon">
+         <img v-on:click="displayToDoList" class="medium-icon" src="@/assets/img/todolist.svg"/>
+       </div>
+
+       <div class="contaneur-side-bar-icon">
+         <img v-on:click="displayNote" class="medium-icon" src="@/assets/img/note_add.svg"/>
+       </div>
+     </div>
+     <div class="displaySideBarParamButton">
+       <img v-on:click="switchBar" src="@/assets/img/arrow_down_white.svg"/>
+     </div>
+   </div>
 
 </template>
 
@@ -160,6 +104,8 @@
 
 import FooterSectionSideBar from '@/components/HomePage/Footer/FooterSectionSideBar.vue'
 import { useCollectionStore } from '@/store/collectionStore.js'
+import { useToDoListStore } from '@/store/toDoListStore.js'
+import { mapState } from 'pinia'
 
 var collectionStore
 
@@ -174,8 +120,12 @@ export default {
   components: {
     FooterSectionSideBar
   },
-  mounted () {
+  beforeMount () {
     collectionStore = useCollectionStore()
+  },
+  computed: {
+    ...mapState(useCollectionStore, { Collections: ['getCollections'] }),
+    ...mapState(useToDoListStore, { toDoLists: ['getToDoLists'] })
   },
   methods: {
     sendChange () {
@@ -186,11 +136,11 @@ export default {
     },
     displayNote () {
       this.$emit('displayNote', true)
-      console.log('COLECTION VERIF DELETION => ', collectionStore.getCollectionData(3940))
+      console.log('COLECTION VERIF DELETION => ', collectionStore.getToDoLists(3940))
     },
     displayCollection () {
       this.$emit('displayCollection', true)
-      console.log('DELATION => ', collectionStore.deleteCollection(3940))
+      console.log('DELATION => ', collectionStore.getNotes(3940, 19))
     },
     displayToDoList () {
       this.$emit('displayToDoList', true)
