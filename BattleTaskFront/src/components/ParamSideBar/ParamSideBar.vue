@@ -6,21 +6,22 @@
                   <img src="@/assets/img/user_account.svg"/>
                   <span>T-Rex</span>
               </div>
-              <div class="sideParamSection">
-                <div class="sideParamElement">
-                  <img class ="small-icon" src="@/assets/img/home.svg"/>
-                  <span class="sidebar-text-element" >Dashbord</span>
+              <div class="silder-side-param-section">
+                <div class="sideParamSection">
+                  <div class="sideParamElement">
+                    <img class ="small-icon" src="@/assets/img/home.svg"/>
+                    <span class="sidebar-text-element" >Dashbord</span>
+                  </div>
+                  <div class="sideParamElement">
+                    <img class ="small-icon" src="@/assets/img/task_alt.svg"/>
+                    <span class="sidebar-text-element" >Tâche terminée</span>
+                  </div>
+                  <div class="sideParamElement">
+                    <img class ="small-icon" src="@/assets/img/settings.svg"/>
+                    <span class="sidebar-text-element" >Paramettre</span>
+                  </div>
                 </div>
-                <div class="sideParamElement">
-                  <img class ="small-icon" src="@/assets/img/task_alt.svg"/>
-                  <span class="sidebar-text-element" >Tâche terminée</span>
-                </div>
-                <div class="sideParamElement">
-                  <img class ="small-icon" src="@/assets/img/settings.svg"/>
-                  <span class="sidebar-text-element" >Paramettre</span>
-                </div>
-              </div>
-              <div class="sideCollectionSelection">
+                <div class="sideCollectionSelection">
                   <div class="sideCollectionTitle">
                     <div>
                       <img src="@/assets/img/collection.svg" class="small-icon"/>
@@ -68,53 +69,54 @@
                       <div class="sideCollectionName">Tâche ménagères</div>
                     </div>
                   </div>
-              </div>
-              <div class="sideToDoListSelection">
-                  <div class="sideToDoListTitle">
-                    <div>
-                      <img class="small-icon" src="@/assets/img/todolist.svg"/>
+                </div>
+                <div class="sideToDoListSelection">
+                    <div class="sideToDoListTitle">
                       <div>
-                        To Do List
+                        <img class="small-icon" src="@/assets/img/todolist.svg"/>
+                        <div>
+                          To Do List
+                        </div>
+                      </div>
+                      <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
+                    </div>
+                    <div class="sideToDoList-List">
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
+                      </div>
+                      <div class="sideToDoListItem">
+                        <div class="sideToDoListDot"></div>
+                        <div class="sideToDoListName">Tâche ménagères</div>
                       </div>
                     </div>
-                    <img class="sideAddButton" src="@/assets/img/add_button_white.svg"/>
-                  </div>
-                  <div class="sideToDoList-List">
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                    <div class="sideToDoListItem">
-                      <div class="sideToDoListDot"></div>
-                      <div class="sideToDoListName">Tâche ménagères</div>
-                    </div>
-                  </div>
+                </div>
+                <FooterSectionSideBar/>
               </div>
-                <FooterSection/>
             </div>
           </div>
           <div v-on:click="switchBar()" class="displaySideBarParamButton">
@@ -156,7 +158,10 @@
 
 <script>
 
-import FooterSection from '../HomePage/Footer/FooterSection.vue'
+import FooterSectionSideBar from '@/components/HomePage/Footer/FooterSectionSideBar.vue'
+import { useCollectionStore } from '@/store/collectionStore.js'
+
+var collectionStore
 
 export default {
   data () {
@@ -167,7 +172,10 @@ export default {
   },
   name: 'ParamSideBar',
   components: {
-    FooterSection
+    FooterSectionSideBar
+  },
+  mounted () {
+    collectionStore = useCollectionStore()
   },
   methods: {
     sendChange () {
@@ -178,12 +186,15 @@ export default {
     },
     displayNote () {
       this.$emit('displayNote', true)
+      console.log('COLECTION VERIF DELETION => ', collectionStore.getCollectionData(3940))
     },
     displayCollection () {
       this.$emit('displayCollection', true)
+      console.log('DELATION => ', collectionStore.deleteCollection(3940))
     },
     displayToDoList () {
       this.$emit('displayToDoList', true)
+      console.log('Collections => ', collectionStore.getCollections)
     }
   }
 }
@@ -200,7 +211,8 @@ export default {
 .sideBarParamSection{
   position: absolute;
   left: 0px;
-  top: 10vh;
+  top: 15vh;
+  // height: 50vh;
 
   display: flex;
   justify-content: center;
@@ -238,7 +250,6 @@ box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
 
 color: #dcdfe5;
 font-family: oxygen;
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -522,7 +533,8 @@ width : 150px;
 .contaneurBasicSideBarParam{
   display: inline-block;
   width: 100%;
-  height: 100%;
+  min-height: 70vh;
+  max-height: 85vh;
 }
 
 .small-icon{
