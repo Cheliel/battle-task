@@ -2,14 +2,14 @@
     <div class="pageConnexion">
         <NavigationBar/>
         <div class="ConnexionSectionContaneur">
-            <div v-if="isDisplayedConnexion" class="ConnnexionSection">
+            <div v-if="isDisplayedConnexion & !isDisplayedModification" class="ConnnexionSection">
                 <div class="ConnexionForm">
-                    <InputEmail/>
-                    <InputPassword/>
+                    <InputEmail width="70%"/>
+                    <InputPassword width="70%"/>
                     <span> Mot de passe oublié ? </span>
                 </div>
                 <div class="ConnexionBottomSection">
-                    <div v-on:click="validate" class="BT_Valider_ToDoList"><label id="label_Valider">Connexion</label></div>
+                    <div v-on:click="validate" class="BT_Valider_ToDoList" id="large_button"><label id="label_Valider">Connexion</label></div>
                 </div>
             </div>
             <div v-if="isDisplayedInscription" class="InscriptionSection">
@@ -18,22 +18,52 @@
                     <img v-on:click="displayConnexion" src="@/assets/img/close.svg" class="Inscription_BT_close"/>
                 </div>
                 <div class="InscriptionForm">
-                    <InputEmail/>
+                  <div class="InscriptionFormTopSection">
+                    <InputEmail width="85%"/>
                     <InputPseudo/>
-                    <InputPassword @onChange="getPassword"/>
+                  </div>
+                  <div class="InscriptionFormTopSection">
+                    <InputPassword width="85%" @onChange="getPassword"/>
                     <InputConfirmationPassword @onChange="getPasswordConfirmation"/>
-                    <div class="InscriptionErrorSection">
-                        <DisplayError v-show="weakPasswordError" text="Les mots de passe doivent être identique"/>
-                        <DisplayError v-show="passwordDismatchError" text="Le mot de passe ne contient pas les caractérisques requise"/>
+                  </div>
+                  <div class="InscriptionErrorSection">
+                        <DisplayError v-show="weakPasswordError" text="Le mot de passe ne contient pas les caractérisques requise" />
+                        <DisplayError v-show="passwordDismatchError" text="Les mots de passe doivent être identique" />
                     </div>
                 </div>
                 <div class="InscriptionBottomSection">
-                    <div v-on:click="validate" class="BT_Valider_ToDoList"><label id="label_Valider">Enregistrer</label></div>
+                    <div v-on:click="validate" class="BT_Valider_ToDoList" id="large_button"><label id="label_Valider">Enregistrer</label></div>
                 </div>
             </div>
-            <div v-if="isDisplayedConnexion" class="newFighter">
-                    <span class="t">Nouveau Combatant ?</span>
-                    <span v-on:click="displayInscription" class="e">Crée ton compte</span>
+            <div v-if="isDisplayedConnexion & !isDisplayedModification" class="newFighter">
+                    <span class="tz">Nouveau Combatant ?</span>
+                    <span v-on:click="displayInscription" class="newAcount_BT">Crée ton compte</span>
+            </div>
+            <div v-if="isDisplayedModification" class="AcountModification">
+              <div class="ConnexionTopSection">
+                    <div class="myAcountTitle">
+                      <img src="@/assets/img/trash.svg">
+                      <span class="Title">Mon compte</span>
+                    </div>
+                    <img v-on:click="displayConnexion" src="@/assets/img/close.svg" class="Inscription_BT_close"/>
+                </div>
+                <div class="AcountModificationForm">
+                  <div class="AcountModificationTopSection">
+                    <InputEmail width="85%"/>
+                    <InputPseudo/>
+                  </div>
+                  <div class="AcountModificationTopSection">
+                    <InputPassword width="85%" @onChange="getPassword"/>
+                    <InputConfirmationPassword @onChange="getPasswordConfirmation"/>
+                  </div>
+                  <div class="InscriptionErrorSection">
+                        <DisplayError v-show="weakPasswordError" text="Le mot de passe ne contient pas les caractérisques requise" />
+                        <DisplayError v-show="passwordDismatchError" text="Les mots de passe doivent être identique" />
+                    </div>
+                </div>
+                <div class="InscriptionBottomSection">
+                    <div v-on:click="validate" class="BT_Valider_ToDoList" id="large_button"><label id="label_Valider">Enregistrer</label></div>
+                </div>
             </div>
         </div>
         <FooterSection/>
@@ -62,10 +92,11 @@ export default {
       display: Number,
       isDisplayedInscription: ref(false),
       isDisplayedConnexion: ref(true),
-      password: String,
-      passwordConfirmation: String,
-      weakPasswordError: false,
-      passwordDismatchError: false
+      isDisplayedModification: ref(false),
+      password: ref(String),
+      passwordConfirmation: ref(String),
+      weakPasswordError: ref(false),
+      passwordDismatchError: ref(false)
     }
   },
   methods: {
@@ -78,22 +109,29 @@ export default {
       this.isDisplayedConnexion = true
     },
     passwordConfirmationVerif () {
-      if (!this.password.toString().match(this.passwordConfirmation)) {
-        this.weakPasswordError = true
-        console.log(this.password)
-        console.log(this.passwordConfirmation)
-        console.log('r')
-      }
-    },
-    getPassword (event) {
-      if (event.password.match(passwordRegex)) {
-        this.password = event.password
+      console.log('pasword => ', this.password.value)
+      console.log('password confirm => ', this.passwordConfirmation.value)
+      if (!this.password.value.match(this.passwordConfirmation.value)) {
+        console.log('confirm dismatch')
+        this.passwordDismatchError = false
       } else {
+        console.log('confirmation match')
         this.passwordDismatchError = true
       }
     },
+    getPassword (event) {
+      console.log('event from get password => ', event)
+      if (event.password.match(passwordRegex)) {
+        // passwordChange.ComputedSetter(event.password)
+        this.password.value = event.password
+        this.weakPasswordError = false
+      } else {
+        this.weakPasswordError = true
+      }
+    },
     getPasswordConfirmation (event) {
-      this.passwordConfirmation = event.passwordConfirmation
+      console.log('event from get password => ', event)
+      this.passwordConfirmation.value = event.passwordConfirmation
       this.passwordConfirmationVerif()
     }
   },
@@ -111,6 +149,12 @@ export default {
 </script>
 
 <style lang="scss">
+
+//////////////////////////////////////////////////////////////////////////////
+// CONNEXION ===== > MAIN <======
+////
+//////////////////////////////////////////////////////////////////////////
+
 .pageConnexion{
     display: flex;
     flex-direction: column;
@@ -145,21 +189,6 @@ export default {
     box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.InscriptionSection{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1;
-    height: 500px;
-    width: 450px;
-
-    background-color: #dcdfe5;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .ConnexionForm{
     display: flex;
     flex-direction: column;
@@ -168,17 +197,6 @@ export default {
 
     height: 100%;
     width: 100%;
-}
-
-.InscriptionForm{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-evenly;
-
-    height: 100%;
-    width: 100%;
-    margin-bottom: 40px;
 }
 
 .ConnexionForm span {
@@ -197,12 +215,118 @@ export default {
   font-size: 50px;
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// INSCRIPTION ===== > MAIN <======
+////
+//////////////////////////////////////////////////////////////////////////
+
+.InscriptionSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    //height: 350px;
+    width: 550px;
+
+    background-color: #dcdfe5;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.InscriptionForm{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.InscriptionFormTopSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+}
+
+.InscriptionErrorSection{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.InscriptionErrorSection, span {
+    margin-top: 6px;
+}
+
 .ConnexionBottomSection, .InscriptionBottomSection{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
   width: 100%;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// ACOUNT MODIFICATION ===== > MAIN <======
+////
+//////////////////////////////////////////////////////////////////////////
+
+.AcountModification{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    width: 550px;
+
+    background-color: #dcdfe5;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.AcountModificationForm{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    height: 100%;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.AcountModificationTopSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+}
+
+.myAcountTitle{
+  display: flex;
+}
+
+.myAcountTitle > img:hover {
+  cursor : pointer;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// PAGE CONNEXION ===== > MISC <======
+////
+//////////////////////////////////////////////////////////////////////////
+
+#large_button{
+  width: 90%;
 }
 
 .newFighter{
@@ -227,24 +351,14 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
 }
 
-.t{
-    font-family: oxygen;
+.newFighter > span{
+  font-family: oxygen;
     font-weight: 600;
 }
 
-.e{
+.newAcount_BT{
     color: #7d5889;
-    font-weight: 600;
     cursor: pointer;
 }
 
-.InscriptionErrorSection{
-    display: flex;
-    flex-direction: column;
-    margin-top: 6px;
-}
-
-.InscriptionErrorSection, span {
-    margin-top: 6px;
-}
 </style>

@@ -46,14 +46,36 @@ export default {
 .
 <style lang="scss">
 .full-calendar{
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 280px;
   background-color: #dcdfe5;
   padding: 20px 20px 0px 20px;
   box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  margin-right: 125px;
+  // margin-right: 125px;
   scrollbar-width:none;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px){
+  .full-calendar{
+    height: 300px;
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px){
+  .full-calendar{
+    height: 450px;
+    width: 550px;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+  .full-calendar{
+    height: 450px;
+    width: 800px;
+  }
 }
 
 .full-calendar div {

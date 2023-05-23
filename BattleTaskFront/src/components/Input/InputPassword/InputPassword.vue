@@ -15,6 +15,7 @@
 
 <script>
 import { ref } from 'vue'
+
 export default {
   data () {
     return {
@@ -25,6 +26,9 @@ export default {
   name: 'InputPassword',
   components: {
 
+  },
+  props: {
+    width: String
   },
   methods: {
     sendChange () {
@@ -58,7 +62,7 @@ export default {
 .InputPasswordSubSection {
   background-color: #DCDFE5;
   height: 50px;
-  width: 70%;
+  width: v-bind(width);
   margin-top: 5px;
   padding: 5px;
   padding-left: 10px;

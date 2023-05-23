@@ -72,6 +72,11 @@ export default {
   justify-content: space-between;
   height: 100%;
   z-index: 1;
+  scrollbar-width:none;
+}
+
+.pageNote ::-webkit-scrollbar {
+  display: none;
 }
 
 .noteContaneur{
@@ -82,6 +87,11 @@ export default {
   z-index: 1;
   height: 100%;
   width: 100vw;
+  scrollbar-width:none;
+}
+
+.noteContaneur ::-webkit-scrollbar {
+  display: none;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -113,7 +123,7 @@ export default {
   position: absolute;
   right: 0vw;
   top: 20vh;
-  height: 60vh;
+  height: 70vh;
   overflow-y: scroll;
   scrollbar-width:none;
 
@@ -134,7 +144,7 @@ export default {
   position: absolute;
   right: 0px;
   top: 20vh;
-  height: 60vh;
+  height: 80vh;
   overflow-y: scroll;
   scrollbar-width:none;
 

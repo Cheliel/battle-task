@@ -1,6 +1,6 @@
 <template>
-    <div class="footerContaner">
-        <div class="footerContent">
+    <div class="footerContanerSideBar">
+        <div class="footerContentSideBar">
              <div>c 2023 BattleTask.</div>
              <div><a href="#faqSection"> Condition d'utilisation</a> - </div>
              <div><a href="#faqSection"> Politique de confidentialité</a> - </div>
@@ -13,22 +13,21 @@
 
 <script>
 export default {
-  name: 'FooterSection'
+  name: 'FooterSectionSideBar'
 }
 </script>
 
 <style lang="scss">
-.footerContaner{
+.footerContanerSideBar{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+    justify-content: left;
+    width: 200px;
     // width: 100%;
     padding: 10px;
-    // background-color: #dcdef5;
+    background-color: #0e0f19;
     // margin: 100px 0px 20px 0px;
 }
-.footerContent{
+.footerContentSideBar{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -38,7 +37,7 @@ export default {
     font-size: 10px;
 }
 
-.footerContent div{
+.footerContentSideBar div{
     margin-right: 3px;
     min-width: 20px;
     white-space: nowrap;

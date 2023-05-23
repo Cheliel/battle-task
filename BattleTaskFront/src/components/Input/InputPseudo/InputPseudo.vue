@@ -30,7 +30,7 @@ export default {
 .InputPseudoSection {
   background-color: #DCDFE5;
   height: 50px;
-  width: 70%;
+  width: 85%;
   margin-top: 5px;
   padding: 5px;
   padding-left: 10px;

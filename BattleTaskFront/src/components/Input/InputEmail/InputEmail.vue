@@ -19,6 +19,9 @@ export default {
   components: {
 
   },
+  props: {
+    width: String
+  },
   methods: {
     sendChange () {
       this.$emit('onChange', this.name)
@@ -44,7 +47,7 @@ export default {
 .InputEmailSection {
   background-color: #DCDFE5;
   height: 50px;
-  width: 70%;
+  width: v-bind(width);
   margin-top: 5px;
   padding: 5px;
   padding-left: 10px;
