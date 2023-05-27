@@ -1,25 +1,25 @@
 <template>
-    <div class="answerContaner">
-        <p>{{ answer }}</p>
-    </div>
+  <div class="answerContaner">
+    <p>{{ answer }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'FaqConteneur',
+  name: "FaqConteneur",
   props: {
-    answer: String
-  }
-}
+    answer: String,
+  },
+};
 </script>
 
 <style>
-.answerContaner{
-    width: 100%;
-    font-style: oxygen;
-    font-size: 17px;
+.answerContaner {
+  width: 100%;
+  font-style: oxygen;
+  font-size: 17px;
 }
-.answerContaner p{
-    margin-left: 6%;
+.answerContaner p {
+  margin-left: 6%;
 }
 </style>

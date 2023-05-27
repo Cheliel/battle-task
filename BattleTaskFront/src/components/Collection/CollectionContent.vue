@@ -1,29 +1,27 @@
 <template>
-    <div class="collectionContaneur">
-      <navigation-bar/>
-      <FormCollectionContaneur/>
-      <FooterSection/>
-    </div>
-  </template>
+  <div class="collectionContaneur">
+    <navigation-bar />
+    <FormCollectionContaneur />
+    <FooterSection />
+  </div>
+</template>
 
 <script>
-import NavigationBar from '../HomePage/NavBar/NavigationBar.vue'
-import FooterSection from '../HomePage/Footer/FooterSection.vue'
-import FormCollectionContaneur from './Form/FormCollectionContaneur.vue'
+import NavigationBar from "../HomePage/NavBar/NavigationBar.vue";
+import FooterSection from "../HomePage/Footer/FooterSection.vue";
+import FormCollectionContaneur from "./Form/FormCollectionContaneur.vue";
 export default {
-  name: 'CollectionContent',
+  name: "CollectionContent",
   components: {
     NavigationBar,
     FormCollectionContaneur,
-    FooterSection
-
-  }
-}
-
+    FooterSection,
+  },
+};
 </script>
 
 <style lang="scss">
-.collectionContaneur{
+.collectionContaneur {
   display: flex;
   flex-direction: column;
   align-items: center;

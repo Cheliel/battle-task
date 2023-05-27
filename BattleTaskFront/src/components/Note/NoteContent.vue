@@ -1,55 +1,56 @@
 <template>
   <div class="pageNote">
-    <navigation-bar/>
+    <navigation-bar />
     <div class="noteContaneur">
-          <CalendarContaner/>
-          <FormNoteContaneur v-if="false"/>
-          <div v-if="1===display" class="sideColectionPannel">
-            <div class="contaneurBasic">
-              <FormCollectionContaneur/>
-            </div>
+      <CalendarContaner />
+      <FormNoteContaneur v-if="false" />
+      <div v-if="1 === display" class="sideColectionPannel">
+        <div class="contaneurBasic">
+          <FormCollectionContaneur />
         </div>
-        <div v-if="2===display" class="sideToDoListPannel">
-          <div class="contaneurBasic">
-            <FormToDoListContaneur/>
-          </div>
+      </div>
+      <div v-if="2 === display" class="sideToDoListPannel">
+        <div class="contaneurBasic">
+          <FormToDoListContaneur />
         </div>
-        <div v-if="3===display" class="sideNotePannel">
-          <div class="contaneurBasic">
-            <FormNoteContaneur/>
-          </div>
+      </div>
+      <div v-if="3 === display" class="sideNotePannel">
+        <div class="contaneurBasic">
+          <FormNoteContaneur />
         </div>
-          <ParamSideBar
-          @displayNote="displaySideBar(3)"
-          @displayCollection="displaySideBar(1)"
-          @displayToDoList="displaySideBar(2)"/>
+      </div>
+      <ParamSideBar
+        @displayNote="displaySideBar(3)"
+        @displayCollection="displaySideBar(1)"
+        @displayToDoList="displaySideBar(2)"
+      />
     </div>
   </div>
-  </template>
+</template>
 
 <script>
-import NavigationBar from '../HomePage/NavBar/NavigationBar.vue'
-import FormNoteContaneur from '@/components/Note/From/FormNoteContaneur.vue'
-import ParamSideBar from '../ParamSideBar/ParamSideBar.vue'
-import FormCollectionContaneur from '@/components/Collection/Form/FormCollectionContaneur.vue'
-import FormToDoListContaneur from '../ToDoList/Form/FormToDoListContaneur.vue'
-import CalendarContaner from '@/components/Calendar/CalendarContaner.vue' // const date = new Date();
+import NavigationBar from "../HomePage/NavBar/NavigationBar.vue";
+import FormNoteContaneur from "@/components/Note/From/FormNoteContaneur.vue";
+import ParamSideBar from "../ParamSideBar/ParamSideBar.vue";
+import FormCollectionContaneur from "@/components/Collection/Form/FormCollectionContaneur.vue";
+import FormToDoListContaneur from "../ToDoList/Form/FormToDoListContaneur.vue";
+import CalendarContaner from "@/components/Calendar/CalendarContaner.vue"; // const date = new Date();
 
 export default {
-  name: 'NoteContent',
-  data () {
+  name: "NoteContent",
+  data() {
     return {
-      display: 0
-    }
+      display: 0,
+    };
   },
   methods: {
-    displaySideBar (val) {
+    displaySideBar(val) {
       if (val === this.display) {
-        this.display = 0
+        this.display = 0;
       } else {
-        this.display = val
+        this.display = val;
       }
-    }
+    },
   },
   components: {
     NavigationBar,
@@ -57,29 +58,27 @@ export default {
     FormCollectionContaneur,
     FormToDoListContaneur,
     ParamSideBar,
-    CalendarContaner
-  }
-}
-
+    CalendarContaner,
+  },
+};
 </script>
 
 <style lang="scss">
-
-.pageNote{
+.pageNote {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100%;
   z-index: 1;
-  scrollbar-width:none;
+  scrollbar-width: none;
 }
 
 .pageNote ::-webkit-scrollbar {
   display: none;
 }
 
-.noteContaneur{
+.noteContaneur {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +86,7 @@ export default {
   z-index: 1;
   height: 100%;
   width: 100vw;
-  scrollbar-width:none;
+  scrollbar-width: none;
 }
 
 .noteContaneur ::-webkit-scrollbar {
@@ -99,13 +98,13 @@ export default {
 ////
 //////////////////////////////////////////////////////////////////////////
 
-.sideColectionPannel{
+.sideColectionPannel {
   position: absolute;
-  right:0vw;
+  right: 0vw;
   top: 20vh;
   height: 370px;
   overflow-y: scroll;
-  scrollbar-width:none;
+  scrollbar-width: none;
 
   display: flex;
   flex-direction: column;
@@ -116,16 +115,16 @@ export default {
   background-color: #dcdfe5;
   z-index: 999;
   border-radius: 12px 0px 0px 12px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.sideToDoListPannel{
+.sideToDoListPannel {
   position: absolute;
   right: 0vw;
   top: 20vh;
   height: 70vh;
   overflow-y: scroll;
-  scrollbar-width:none;
+  scrollbar-width: none;
 
   display: flex;
   flex-direction: column;
@@ -137,16 +136,16 @@ export default {
   background-color: #dcdfe5;
   z-index: 999;
   border-radius: 12px 0px 0px 12px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.sideNotePannel{
+.sideNotePannel {
   position: absolute;
   right: 0px;
   top: 20vh;
   height: 80vh;
   overflow-y: scroll;
-  scrollbar-width:none;
+  scrollbar-width: none;
 
   display: flex;
   flex-direction: column;
@@ -158,7 +157,7 @@ export default {
   background-color: #dcdfe5;
   z-index: 999;
   border-radius: 12px 0px 0px 12px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -178,7 +177,7 @@ export default {
   display: none;
 }
 
-.contaneurBasic{
+.contaneurBasic {
   display: inline-block;
   width: 100%;
   height: 100%;

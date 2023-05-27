@@ -1,55 +1,61 @@
 <template>
-    <div class="FormNoteContaneur">
-        <div class="TopSection">
-            <span class="Title">Note</span>
-            <router-link to="/">  <img src="@/assets/img/close.svg" class="BT_close"/></router-link>
-        </div>
-        <NoteInputContaneur @onChange="changeListener"/>
-        <InputDificulty v-if='false'/>
-        <div class="bottomSection">
-          <div v-on:click="validate" class="BT_Valider_Note"><label id="label_Valider">VALIDER</label></div>
-        </div>
+  <div class="FormNoteContaneur">
+    <div class="TopSection">
+      <span class="Title">Note</span>
+      <router-link to="/">
+        <img src="@/assets/img/close.svg" class="BT_close"
+      /></router-link>
     </div>
-  </template>
+    <NoteInputContaneur @onChange="changeListener" />
+    <InputDificulty v-if="false" />
+    <div class="bottomSection">
+      <div v-on:click="validate" class="BT_Valider_Note">
+        <label id="label_Valider">VALIDER</label>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
-
-import NoteInputContaneur from './NoteInputContaneur.vue'
+import NoteInputContaneur from "./NoteInputContaneur.vue";
 export default {
-  name: 'FormCollectionContaneur',
-  data () {
+  name: "FormCollectionContaneur",
+  data() {
     return {
       notificationOn: false,
-      collectionName: '',
-      collectionColor: ''
-    }
+      collectionName: "",
+      collectionColor: "",
+    };
   },
   components: {
-    NoteInputContaneur
+    NoteInputContaneur,
   },
   methods: {
-    changeListener (event) {
-      this.notificationOn = event.notificationOn
-      this.collectionName = event.collectionName
-      this.collectionColor = event.collectionColor
+    changeListener(event) {
+      this.notificationOn = event.notificationOn;
+      this.collectionName = event.collectionName;
+      this.collectionColor = event.collectionColor;
     },
-    validate () {
-      console.log(this.notificationOn, this.collectionColor, this.collectionName)
-    }
-  }
-}
-
+    validate() {
+      console.log(
+        this.notificationOn,
+        this.collectionColor,
+        this.collectionName
+      );
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-.FormNoteContaneur{
+.FormNoteContaneur {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 20px 20px 0px 20px;
 }
-.TopSection{
+.TopSection {
   // width: 100%;
   display: flex;
   flex-direction: row;
@@ -59,7 +65,7 @@ export default {
   font-size: 50px;
 }
 
-.bottomSection{
+.bottomSection {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,7 +74,7 @@ export default {
   // width: 100%;
 }
 
-.BT_Valider_Note{
+.BT_Valider_Note {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -81,10 +87,10 @@ export default {
   border-radius: 8px;
 }
 
-.BT_Valider_Note:hover{
+.BT_Valider_Note:hover {
   border: solid #f1414a 3px;
   cursor: pointer;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
-
 </style>

@@ -1,15 +1,15 @@
 <template>
-  <CollectionContent/>
+  <CollectionContent />
 </template>
 
 <script>
 // @ is an alias to /src
-import CollectionContent from '@/components/Collection/CollectionContent.vue'
+import CollectionContent from "@/components/Collection/CollectionContent.vue";
 
 export default {
-  name: 'CollectionView',
+  name: "CollectionView",
   components: {
-    CollectionContent
-  }
-}
+    CollectionContent,
+  },
+};
 </script>

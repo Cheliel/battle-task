@@ -1,15 +1,15 @@
 <template>
-<ToDoListContent/>
+  <ToDoListContent />
 </template>
 
 <script>
 // @ is an alias to /src
-import ToDoListContent from '@/components/ToDoList/ToDoListContent.vue'
+import ToDoListContent from "@/components/ToDoList/ToDoListContent.vue";
 
 export default {
-  name: 'ToDoListView',
+  name: "ToDoListView",
   components: {
-    ToDoListContent
-  }
-}
+    ToDoListContent,
+  },
+};
 </script>

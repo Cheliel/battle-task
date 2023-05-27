@@ -1,15 +1,15 @@
 <template>
-    <PageConnexion/>
+  <PageConnexion />
 </template>
 
 <script>
 // @ is an alias to /src
-import PageConnexion from '@/Pages/Connexion/PageConnexion.vue'
+import PageConnexion from "@/Pages/Connexion/PageConnexion.vue";
 
 export default {
-  name: 'ConnexionView',
+  name: "ConnexionView",
   components: {
-    PageConnexion
-  }
-}
+    PageConnexion,
+  },
+};
 </script>

@@ -1,15 +1,15 @@
 <template>
-<NoteContent/>
+  <NoteContent />
 </template>
 
 <script>
 // @ is an alias to /src
-import NoteContent from '@/components/Note/NoteContent.vue'
+import NoteContent from "@/components/Note/NoteContent.vue";
 
 export default {
-  name: 'NoteView',
+  name: "NoteView",
   components: {
-    NoteContent
-  }
-}
+    NoteContent,
+  },
+};
 </script>

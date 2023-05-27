@@ -1,34 +1,40 @@
 <template>
-    <div class="InputNotificationContaneur">
-        <img v-if="this.notificationOn" v-on:click="notificationEvent" src="@/assets/img/notification_on.svg" class="BT_Notification on">
-        <img v-if="!this.notificationOn" v-on:click="notificationEvent" src="@/assets/img/notification_off.svg" class="BT_Notification off">
-    </div>
+  <div class="InputNotificationContaneur">
+    <img
+      v-if="this.notificationOn"
+      v-on:click="notificationEvent"
+      src="@/assets/img/notification_on.svg"
+      class="BT_Notification on"
+    />
+    <img
+      v-if="!this.notificationOn"
+      v-on:click="notificationEvent"
+      src="@/assets/img/notification_off.svg"
+      class="BT_Notification off"
+    />
+  </div>
 </template>
 
 <script>
-
 export default {
-  data () {
+  data() {
     return {
-      notificationOn: false
-    }
+      notificationOn: false,
+    };
   },
-  name: 'InputNotification',
-  components: {
-
-  },
+  name: "InputNotification",
+  components: {},
   methods: {
-    notificationEvent () {
-      this.notificationOn = !this.notificationOn
-      this.$emit('onChange', this.notificationOn)
-    }
-  }
-}
-
+    notificationEvent() {
+      this.notificationOn = !this.notificationOn;
+      this.$emit("onChange", this.notificationOn);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-.InputNotificationContaneur{
+.InputNotificationContaneur {
   display: flex;
   flex-direction: row;
   align-items: right;
@@ -38,28 +44,27 @@ export default {
   height: 35px;
 }
 
-.BT_Notification{
-    font-family: oxygen;
-    height: 30px;
-    width: 30px;
+.BT_Notification {
+  font-family: oxygen;
+  height: 30px;
+  width: 30px;
 }
 
-.off{
+.off {
   opacity: 0.6;
 }
 
-.off:hover{
+.off:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-.on{
+.on {
   opacity: 0.6;
 }
 
-.on:hover{
+.on:hover {
   cursor: pointer;
   opacity: 1;
 }
-
 </style>

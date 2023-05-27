@@ -1,34 +1,39 @@
 <template>
-    <div class="InputDescriptionSection">
-        <div class="inputDescriptionContaneur">
-            <textarea v-on:input="sendChange" rows="100" cols="10" placeholder="Description" type="text" class="inputDescription" v-model="name"> </textarea>
-            <hr class="lign">
-        </div>
+  <div class="InputDescriptionSection">
+    <div class="inputDescriptionContaneur">
+      <textarea
+        v-on:input="sendChange"
+        rows="100"
+        cols="10"
+        placeholder="Description"
+        type="text"
+        class="inputDescription"
+        v-model="name"
+      >
+      </textarea>
+      <hr class="lign" />
     </div>
+  </div>
 </template>
 
 <script>
-
 export default {
   props: {
-    isDisplayDescription: Boolean
+    isDisplayDescription: Boolean,
   },
-  name: 'InputDescriptionContaneur',
-  components: {
-
-  },
+  name: "InputDescriptionContaneur",
+  components: {},
   methods: {
-    sendChange () {
-      this.$emit('onChange', this.name)
-    }
-  }
-}
-
+    sendChange() {
+      this.$emit("onChange", this.name);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .InputDescriptionSection {
-  background-color: #DCDFE5;
+  background-color: #dcdfe5;
   height: 130px;
   width: 100%;
   margin-top: 5px;
@@ -36,7 +41,7 @@ export default {
   padding-left: 10px;
   padding-right: 10px;
   border: solid #0e0f19 2px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 14px;
   margin-top: 35px;
 }
@@ -46,22 +51,22 @@ export default {
 //     font-family: oxygen;
 // }
 
-.inputDescription, textarea{
-  background-color: #DCDFE5;
+.inputDescription,
+textarea {
+  background-color: #dcdfe5;
   border: none;
   outline: none;
   width: 98%;
   height: 100px;
   resize: none;
-  scrollbar-width:none;
-
+  scrollbar-width: none;
 }
 
-.inputDescription::-webkit-scrollbar{
+.inputDescription::-webkit-scrollbar {
   display: none;
 }
 
-textarea{
+textarea {
   font-family: oxygen;
   font-size: 15px;
 }
@@ -69,5 +74,4 @@ textarea{
 // input[type=text]:focus {
 //   margin-bottom: 7px;
 // }
-
 </style>

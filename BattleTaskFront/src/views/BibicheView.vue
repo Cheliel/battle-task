@@ -1,18 +1,17 @@
-
 <template>
   <div class="about">
-    <BibicheItem/>
+    <BibicheItem />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import BibicheItem from '@/components/BibicheItem.vue'
+import BibicheItem from "@/components/BibicheItem.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    BibicheItem
-  }
-}
+    BibicheItem,
+  },
+};
 </script>

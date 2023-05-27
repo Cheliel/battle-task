@@ -1,29 +1,27 @@
 <template>
-    <div class="toDoListContaneur">
-      <navigation-bar/>
-      <FormToDoListContaneur/>
-      <FooterSection/>
-    </div>
-  </template>
+  <div class="toDoListContaneur">
+    <navigation-bar />
+    <FormToDoListContaneur />
+    <FooterSection />
+  </div>
+</template>
 
 <script>
-import NavigationBar from '../HomePage/NavBar/NavigationBar.vue'
-import FooterSection from '../HomePage/Footer/FooterSection.vue'
-import FormToDoListContaneur from './Form/FormToDoListContaneur.vue'
+import NavigationBar from "../HomePage/NavBar/NavigationBar.vue";
+import FooterSection from "../HomePage/Footer/FooterSection.vue";
+import FormToDoListContaneur from "./Form/FormToDoListContaneur.vue";
 export default {
-  name: 'ToDoListContent',
+  name: "ToDoListContent",
   components: {
     NavigationBar,
     FormToDoListContaneur,
-    FooterSection
-
-  }
-}
-
+    FooterSection,
+  },
+};
 </script>
 
 <style lang="scss">
-.toDoListContaneur{
+.toDoListContaneur {
   display: flex;
   flex-direction: column;
   align-items: center;

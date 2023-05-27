@@ -1,42 +1,73 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
+import axios from "axios";
 
-export const useCollectionStore = defineStore('collectionStore', {
+export const useCollectionStore = defineStore("collectionStore", {
   state: () => ({
-    Collections: [{ id: 3940, name: 'Tâche menagère', color: '#F1414E', isNotified: true, toDoLists: [{ id: 19, name: 'hello', notes: { id: 89, name: 'mqslfk' } }] },
-      { id: 3900, name: 'Tâche menagère1', color: '#F1414E', isNotified: true, toDoLists: [{ id: 8, name: 'hell1', notes: [{ id: 89, name: 'mqslfk' }] }] },
-      { id: 3440, name: 'Tâche menagère2', color: '#F1414E', isNotified: true, toDoLists: [{ id: 7, name: 'hello2', notes: [{ id: 89, name: 'mqslfk' }] }] }]
+    Collections: [],
   }),
   getters: {
     getCollections: (state) => state.Collections,
 
     getToDoLists: (state) => {
-      return (collectionID) => state.Collections.find((collection) => collection.id === collectionID).toDoLists
+      return (collectionID) =>
+        state.Collections.find((collection) => collection.id === collectionID)
+          .toDoLists;
     },
     getNotes: (state) => {
       return (collectionID, toDoListID) => {
-        const toDoLists = state.Collections.find((collection) => collection.id === collectionID).toDoLists
+        const toDoLists = state.Collections.find(
+          (collection) => collection.id === collectionID
+        ).toDoLists;
         if (toDoLists.length) {
-          const t = toDoLists.find((toDoList) => toDoList.id === toDoListID).notes
-          return t
+          const t = toDoLists.find(
+            (toDoList) => toDoList.id === toDoListID
+          ).notes;
+          return t;
         }
-        return { erro: 'bad request' }
-      }
+        return { erro: "bad request" };
+      };
     },
     getCollectionData: (state) => {
-      console.log(state.Collections)
-      return (collectionID) => state.Collections.find((collection) => collection.id === collectionID)
+      console.log(state.Collections);
+      return (collectionID) =>
+        state.Collections.find((collection) => collection.id === collectionID);
     },
     deleteazerCollectionn: (state) => {
-      return (collectionID) => state.Collections.filter((collection) => collection.id === collectionID)
-    }
+      return (collectionID) =>
+        state.Collections.filter(
+          (collection) => collection.id === collectionID
+        );
+    },
   },
   actions: {
-    deleteCollection (collectionID) {
-      this.Collections = this.Collections.filter((collection) => collection.id !== collectionID)
+    async fetchCollection() {
+      const config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "http://127.0.0.1:5000/GetCollection",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6ImI3MTkyNmIyLTc4MmEtNDQyNi1iNzdmLTBiZDc4N2I2ZDEwYSIsImp0aSI6IjI2N2E2YWQyLTEzZmYtNDZlMS1hZjRmLTg2Y2ZhZmE2YTg3MyIsIm5iZiI6MTY4NTIxMjM2MCwiZXhwIjoxNzQ1MjEyMzAwLCJpYXQiOjE2ODUyMTIzNjAsImlzcyI6Im1vaGFtYWRsYXdhbmQuY29tIiwiYXVkIjoibW9oYW1hZGxhd2FuZC5jb20ifQ.b3OLly0sWi4DVEACoOFsi9EFUdDbXl78kxtyvy4Aagon1UvE_TRyO3wgof8AUS5fECWjU9wIeABsKdg3i4wYkg",
+        },
+      };
+      const collection = await axios
+        .request(config)
+        .then((response) => {
+          return response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      this.Collections = collection;
+      console.log(this.Collections);
     },
-    async fillCollection () {
-
-    }
-
-  }
-})
+    deleteCollection(collectionID) {
+      this.Collections = this.Collections.filter(
+        (collection) => collection.id !== collectionID
+      );
+    },
+    async fillCollection() {},
+  },
+});

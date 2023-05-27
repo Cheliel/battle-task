@@ -1,10 +1,19 @@
 <template>
-    <div class="InputEmailSection">
-        <div class="inputEmailContaneur">
-            <input v-on:input="sendChange" v-on:change="verifMail" placeholder="Email" required="required" id="inputEmaill" type="email" class="inputEmail" v-model="mail">
-            <hr class="lign">
-        </div>
+  <div class="InputEmailSection">
+    <div class="inputEmailContaneur">
+      <input
+        v-on:input="sendChange"
+        v-on:change="verifMail"
+        placeholder="Email"
+        required="required"
+        id="inputEmaill"
+        type="email"
+        class="inputEmail"
+        v-model="mail"
+      />
+      <hr class="lign" />
     </div>
+  </div>
 </template>
 
 <script>
@@ -12,40 +21,37 @@
 const regex = '[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+'
 
 export default {
-  data () {
-    return { mail: '' }
+  data() {
+    return { mail: "" };
   },
-  name: 'InputEmail',
-  components: {
-
-  },
+  name: "InputEmail",
+  components: {},
   props: {
-    width: String
+    width: String,
   },
   methods: {
-    sendChange () {
-      this.$emit('onChange', this.name)
+    sendChange() {
+      this.$emit("onChange", this.name);
     },
-    verifMail () {
+    verifMail() {
       if (!this.mail.match(regex)) {
-        const x = document.getElementById('inputEmaill')
-        console.log(x.value)
-        x.style.color = '#f1414a'
+        const x = document.getElementById("inputEmaill");
+        console.log(x.value);
+        x.style.color = "#f1414a";
         // x.style.color = 'red'
       } else {
-        const x = document.getElementById('inputEmaill')
-        console.log(x.value)
-        x.style.color = '#000000'
+        const x = document.getElementById("inputEmaill");
+        console.log(x.value);
+        x.style.color = "#000000";
       }
-    }
-  }
-}
-
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .InputEmailSection {
-  background-color: #DCDFE5;
+  background-color: #dcdfe5;
   height: 50px;
   width: v-bind(width);
   margin-top: 5px;
@@ -54,17 +60,16 @@ export default {
   padding-right: 10px;
   border: solid #0e0f19 2px;
   border-radius: 14px;
-  box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.inputEmailContaneur{
-    margin-top: 10px;
-    font-family: oxygen;
+.inputEmailContaneur {
+  margin-top: 10px;
+  font-family: oxygen;
 }
 
-.inputEmail{
-  background-color: #DCDFE5;
+.inputEmail {
+  background-color: #dcdfe5;
   border: none;
   outline: none;
   width: 98%;
@@ -73,9 +78,7 @@ export default {
   font-size: 15px;
 }
 
-input[type=email]:focus {
+input[type="email"]:focus {
   margin-bottom: 7px;
-
 }
-
 </style>
